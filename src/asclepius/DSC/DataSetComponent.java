@@ -50,20 +50,19 @@ public class DataSetComponent implements IDataSet {
 
     private void readDS() throws FileNotFoundException, IOException{
         ArrayList<String[]> instArray = new ArrayList<>();
-        BufferedReader file = new BufferedReader(new FileReader(dataSource));
-        String line = file.readLine();
-        
-        if(line != null){
-            attributes = line.split(",");
-            line = file.readLine();
-            while(line != null){
-                String[] instLine = line.split(",");
-                instArray.add(instLine);
+        try (BufferedReader file = new BufferedReader(new FileReader(dataSource))) {
+            String line = file.readLine();
+            
+            if(line != null){
+                attributes = line.split(",");
                 line = file.readLine();
+                while(line != null){
+                    String[] instLine = line.split(",");
+                    instArray.add(instLine);
+                    line = file.readLine();
+                }
+                instances = instArray.toArray(new String[0][]);
             }
-            instances = instArray.toArray(new String[0][]);
         }
-        
-        file.close();
     }
 }
