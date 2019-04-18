@@ -6,7 +6,7 @@ import interfaces.IResponderReceptacle;
 
 public class Doutor implements IResponderReceptacle, IEnquirer{
 
-	@Override
+	@Override  
 	public void startInterview() {
 		// TODO Auto-generated method stub
 		

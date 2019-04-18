@@ -1,5 +1,5 @@
 package interfaces;
 
-public interface IEnquirer {
+public interface IEnquirer { 
 	public void startInterview();
 }

@@ -4,7 +4,7 @@ import interfaces.IResponder;
 
 public class Paciente implements IResponder{
 
-	@Override
+	@Override 
 	public String ask(String question) {
 		// TODO Auto-generated method stub
 		return null;
