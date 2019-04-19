@@ -3,7 +3,7 @@
 
 <b><i>Introdução</i></b>
 
-O projeto consiste em uma versão otimizada de um laboratório já realizado em sala (ZombieHealth), no qual um Médico deve diagnosticar a doença de um Paciente com base em um acervo de dados (arquivo CSV). Porém, nesta nova edição, serão consideradas novas especificações propostas, relacionando, por exemplo, mecânicas de Interface em Java. 
+O projeto consiste em uma versão otimizada de um laboratório já realizado em sala (ZombieHealth), no qual um médico deve diagnosticar a doença de um paciente com base em um acervo de dados (arquivo CSV). Porém, nesta nova edição, serão consideradas novas especificações propostas, relacionando, por exemplo, mecânicas de Interface em Java. 
 
 <i>(Todas as novas especificações e detalhes estão disponíveis em https://drive.google.com/file/d/1l_L2ibwlqxWrOAWWGOOSs8f-C83Ywbl_/view, apenas para alunos de MC322 2019 1S, na sala do professor André Santanché)</i>
 
