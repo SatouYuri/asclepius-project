@@ -9,18 +9,19 @@ import java.util.Random;
 public class Paciente implements IResponder{   
     /*Esse ArrayList vai guardar os 7 sintomas (yes/no), os dados do Paciente*/
     private ArrayList<String> dataList = new ArrayList<>();
-    private static final String sim = "yes";
-    private static final String nao = "no";
-    private static final String naoSei = "unkown";
+    public static final String sim = "yes";
+    public static final String nao = "no";
+    public static final String naoSei = "unkown";
     
     public Paciente(){
     /*Quando um Paciente for instanciado, ele obrigatória e aleatoriamente recebe um conjunto de dados diretamente da base .CSV*/
         IDataSet DS = new DataSetComponent();
         DS.setDataSource("src\\data\\test-cases.csv");
-        //String attributes[] = DS.requestAttributes();
+        String attributes[] = DS.requestAttributes();
         String instances[][] = DS.requestInstances();
         int randomData = new Random().nextInt(instances.length);
-        for(int x = 0; x < 7; x++){    
+        //considerando a última coluna como "diagnostic" ou outro elemento q não deve ser considerado
+        for(int x = 0; x < attributes.length - 1; x++){  
             dataList.add(instances[randomData][x]);
         }
         //TESTE OU DEBUGGING
@@ -48,13 +49,13 @@ public class Paciente implements IResponder{
             counter++;
         }
         
-        if(counter < 7){ //Se o sintoma existe...
+        if(counter < attributes.length - 1){ //Se o sintoma existe...
             if(dataList.get(counter).equalsIgnoreCase("t")){
                 return sim;
             }else if(dataList.get(counter).equalsIgnoreCase("f")){
                 return nao;
             }
-        }else if(counter == 7){ //Se o sintoma não existe...
+        }else if(counter == attributes.length - 1){ //Se o sintoma não existe...
             return naoSei;
         }
         
