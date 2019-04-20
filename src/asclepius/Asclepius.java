@@ -1,19 +1,19 @@
 package asclepius;
 
-import asclepius.DSC.DataSetComponent;
-import asclepius.DSC.IDataSet;
+//import asclepius.DSC.DataSetComponent;
+//import asclepius.DSC.IDataSet;
 import classes.Paciente;
 import interfaces.IResponder;
         
 public class Asclepius{
     public static void main(String[] args) {
-        System.out.println("THE WORLD! Pare o tempo agora!");
+        //System.out.println("THE WORLD! Pare o tempo agora!");
         
         /*Capturando informação do acervo de dados .CSV*/
-        IDataSet DS = new DataSetComponent();
-        DS.setDataSource("src\\data\\test-cases.csv");
-        String attributes[] = DS.requestAttributes();
-        String instances[][] = DS.requestInstances();
+        //IDataSet DS = new DataSetComponent();
+        //DS.setDataSource("src\\data\\test-cases.csv");
+        //String attributes[] = DS.requestAttributes();
+        //String instances[][] = DS.requestInstances();
         
         /*Testando o método ask() da classe Paciente*/
         IResponder P1 = new Paciente();

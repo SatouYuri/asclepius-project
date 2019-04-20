@@ -9,12 +9,15 @@ import java.util.Random;
 public class Paciente implements IResponder{   
     /*Esse ArrayList vai guardar os 7 sintomas (yes/no), os dados do Paciente*/
     private ArrayList<String> dataList = new ArrayList<>();
+    private static final String sim = "yes";
+    private static final String nao = "no";
+    private static final String naoSei = "unkown";
     
     public Paciente(){
     /*Quando um Paciente for instanciado, ele obrigatória e aleatoriamente recebe um conjunto de dados diretamente da base .CSV*/
         IDataSet DS = new DataSetComponent();
         DS.setDataSource("src\\data\\test-cases.csv");
-        String attributes[] = DS.requestAttributes();
+        //String attributes[] = DS.requestAttributes();
         String instances[][] = DS.requestInstances();
         int randomData = new Random().nextInt(instances.length);
         for(int x = 0; x < 7; x++){    
@@ -47,12 +50,12 @@ public class Paciente implements IResponder{
         
         if(counter < 7){ //Se o sintoma existe...
             if(dataList.get(counter).equalsIgnoreCase("t")){
-                return "yes";
+                return sim;
             }else if(dataList.get(counter).equalsIgnoreCase("f")){
-                return "no";
+                return nao;
             }
         }else if(counter == 7){ //Se o sintoma não existe...
-            return "unknown";
+            return naoSei;
         }
         
         return "Function ask() has crashed.";
