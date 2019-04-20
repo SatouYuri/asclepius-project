@@ -11,11 +11,6 @@ public class Asclepius{
         DS.setDataSource("src\\data\\test-cases.csv");
         String attributes[] = DS.requestAttributes();
         String instances[][] = DS.requestInstances();
-        for(int i = 0; i < instances.length; i++){
-            for(int a = 0; a < (attributes.length) - 1; a++){
-                System.out.print(instances[i][a] + ", ");
-            }
-            System.out.println(instances[i][(attributes.length) - 1]);
-        }
+        
     }
 }
