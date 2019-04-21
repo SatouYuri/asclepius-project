@@ -9,8 +9,8 @@ import java.util.Random;
 public class Paciente implements IResponder{   
     /*Esse ArrayList vai guardar os 7 sintomas (yes/no), os dados do Paciente*/
     private ArrayList<String> dataList = new ArrayList<>();
-    public static final String sim = "yes";
-    public static final String nao = "no";
+    public static final String sim = "t";
+    public static final String nao = "f";
     public static final String naoSei = "unkown";
     
     public Paciente(){
