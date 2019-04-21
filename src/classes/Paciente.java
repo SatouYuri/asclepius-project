@@ -9,6 +9,7 @@ import java.util.Random;
 public class Paciente implements IResponder{   
     /*Esse ArrayList vai guardar os 7 sintomas (yes/no), os dados do Paciente*/
     private ArrayList<String> dataList = new ArrayList<>();
+    private int randomData; //Remova esse atributo se a condição "Casos não incluídos na tabela podem ser usados pelos docentes para testar o código" for considerada. 
     public static final String sim = "t";
     public static final String nao = "f";
     public static final String naoSei = "unkown";
@@ -19,7 +20,7 @@ public class Paciente implements IResponder{
         DS.setDataSource("src\\data\\test-cases.csv");
         String attributes[] = DS.requestAttributes();
         String instances[][] = DS.requestInstances();
-        int randomData = new Random().nextInt(instances.length);
+        randomData = new Random().nextInt(instances.length);
         //considerando a última coluna como "diagnostic" ou outro elemento q não deve ser considerado
         for(int x = 0; x < attributes.length - 1; x++){  
             dataList.add(instances[randomData][x]);
@@ -63,9 +64,13 @@ public class Paciente implements IResponder{
     }
 
     @Override
+    /*Se a condição do projeto "Casos não incluídos na tabela podem ser usados pelos docentes para testar o código" for considerada, esse método, finalAnswer, se torna inútil.*/
     public boolean finalAnswer(String answer) {
-        // TODO Auto-generated method stub
-        return false;
+        IDataSet DS = new DataSetComponent();
+        DS.setDataSource("src\\data\\test-cases.csv");
+        String instances[][] = DS.requestInstances();
+        
+        return answer.equalsIgnoreCase(instances[randomData][7]); //true ou false
     }
 
 }
