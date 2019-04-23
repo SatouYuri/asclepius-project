@@ -69,21 +69,19 @@ public class Doutor implements IResponderReceptacle, IEnquirer{
                 
                 /*Checando se só há 1 diagnóstico possível*/
             	diagCounter = 0;
-                /*for(int h = 0; h < insList.size(); h++){
+                for(int h = 0; h < insList.size(); h++){
                     if((h + 1) < insList.size()){
                         if(insList.get(h)[attributes.length - 1].equalsIgnoreCase(insList.get(h + 1)[attributes.length - 1])){
-                            break;
-                        }else{
                             diagCounter++;
+                        }else{
+                            break;
                         }
                     }
-                }*/
-                
-                /*ATENÇÃO: HÁ UM ERRO NO ALGORITMO DO DIAGCOUNTER; ARRUMAR DEPOIS.*/
+                }
                 
                 /*Se o size() da insList for 1 OU se só houver 1 diagnóstico possível...*/
-            	if(insList.size() == 1 /*|| diagCounter == (insList.size() - 1)*/){
-                    System.out.println("BROKEN!");
+            	if(insList.size() == 1 || diagCounter == (insList.size() - 1)){
+                    System.out.println("BROKEN!"); /*Essa mensagem indica que, na iteração atual, o número de perguntas foi reduzido!*/
                     break;
                 }
             }
