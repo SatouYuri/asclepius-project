@@ -2,7 +2,7 @@ package classes;
 
 import java.util.ArrayList;
 
-import asclepius.DSC.DataSetComponent;
+import asclepius.DSC.DataSetComponentPlus;
 import asclepius.DSC.IDataSet;
 import interfaces.IEnquirer;
 import interfaces.IResponder;
@@ -26,7 +26,7 @@ public class Doutor implements IResponderReceptacle, IEnquirer{
     	//Verifica ser foi efetuada a conexão
         if(curPacient != null) {
             /*Construindo matriz e lista de dados...*/
-            IDataSet DS = new DataSetComponent();
+            IDataSet DS = new DataSetComponentPlus();
             DS.setDataSource("src\\data\\test-cases.csv");
             String attributes[] = DS.requestAttributes();
             String instances[][] = DS.requestInstances();

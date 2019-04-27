@@ -1,11 +1,11 @@
 package asclepius;
 
-import asclepius.DSC.DataSetComponent;
+import asclepius.DSC.DataSetComponentPlus;
 import asclepius.DSC.IDataSet;
         
 public class DSCTest{
     public static void main(String[] args) {
-        IDataSet DS = new DataSetComponent();
+        IDataSet DS = new DataSetComponentPlus();
         DS.setDataSource("src\\data\\test-cases.csv");
         String attributes[] = DS.requestAttributes();
         for(int a = 0; a < (attributes.length) - 1; a++){

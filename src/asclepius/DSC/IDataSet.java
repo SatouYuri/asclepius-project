@@ -1,4 +1,4 @@
 package asclepius.DSC;
 
-public interface IDataSet extends IDataSource, ITableProducer{
+public interface IDataSet extends IDataSource, ITableProducer, ITreeProducer{
 }

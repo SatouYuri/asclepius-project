@@ -1,8 +1,9 @@
 package asclepius;
 
 import classes.Doutor;
-import asclepius.DSC.DataSetComponent;
+import asclepius.DSC.DataSetComponentPlus;
 import asclepius.DSC.IDataSet;
+import asclepius.DSC.TreeNode;
 import classes.Paciente;
 import interfaces.IEnquirer;
 import interfaces.IResponder;
@@ -12,13 +13,14 @@ public class Asclepius{
         //System.out.println("THE WORLD! Pare o tempo agora!");
         
         /*Capturando informação do acervo de dados .CSV*/
-        IDataSet DS = new DataSetComponent();
-        DS.setDataSource("src\\data\\test-cases.csv");
+        IDataSet DS = new DataSetComponentPlus();
+        DS.setDataSource("src\\data\\test-cases-minus.csv");
         String attributes[] = DS.requestAttributes();
-        //String instances[][] = DS.requestInstances();
+        String instances[][] = DS.requestInstances();
+        TreeNode insTree = DS.requestInsTree(); //Teste de print incluído.
         
         /*Testando o método ask() da classe Paciente*/
-        IResponder P1 = new Paciente();
+        /*IResponder P1 = new Paciente();
         IResponder P2 = new Paciente();
         
         System.out.println(P1.ask("paralysis"));
@@ -31,6 +33,7 @@ public class Asclepius{
         System.out.println();
         
         IEnquirer doc = new Doutor(P1);
-        doc.startInterview();
+        doc.startInterview();*/
+        
     }
 }

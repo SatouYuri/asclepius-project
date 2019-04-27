@@ -1,6 +1,6 @@
 package classes;
 
-import asclepius.DSC.DataSetComponent;
+import asclepius.DSC.DataSetComponentPlus;
 import asclepius.DSC.IDataSet;
 import interfaces.IResponder;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class Paciente implements IResponder{
     
     public Paciente(){
     /*Quando um Paciente for instanciado, ele obrigatória e aleatoriamente recebe um conjunto de dados diretamente da base .CSV*/
-        IDataSet DS = new DataSetComponent();
+        IDataSet DS = new DataSetComponentPlus();
         DS.setDataSource("src\\data\\test-cases.csv");
         String attributes[] = DS.requestAttributes();
         String instances[][] = DS.requestInstances();
@@ -37,7 +37,7 @@ public class Paciente implements IResponder{
     @Override 
     public String ask(String question) {
         /*Chamando um DS para adquirir o vetor de sintomas*/
-        IDataSet DS = new DataSetComponent();
+        IDataSet DS = new DataSetComponentPlus();
         DS.setDataSource("src\\data\\test-cases.csv");
         String attributes[] = DS.requestAttributes();
         
@@ -66,7 +66,7 @@ public class Paciente implements IResponder{
     @Override
     /*Se a condição do projeto "Casos não incluídos na tabela podem ser usados pelos docentes para testar o código" for considerada, esse método, finalAnswer, se torna inútil.*/
     public boolean finalAnswer(String answer) {
-        IDataSet DS = new DataSetComponent();
+        IDataSet DS = new DataSetComponentPlus();
         DS.setDataSource("src\\data\\test-cases.csv");
         String instances[][] = DS.requestInstances();
         
