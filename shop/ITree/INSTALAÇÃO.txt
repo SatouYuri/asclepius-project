@@ -1,0 +1,7 @@
+Para instalar, basta inserir a pasta "asclepius" no projeto.
+
+Nota: Não mude DSC ou TBC para outros diretórios. Ambos devem estar dentro de "asclepius" para funcionar.
+
+Para criar a árvore de busca com base em dados de um arquivo CSV dos sintomas, use o seguinte:
+
+	ITree EXAMPLE_TREE = new TreeBuilderComponent("caminho de diretório para o .csv");
