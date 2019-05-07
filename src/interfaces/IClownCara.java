@@ -1,3 +1,3 @@
 public interface{
-    String rjoke(float chance, String sintoma)
+    String rjoke(float chance, String sintoma);
 }
