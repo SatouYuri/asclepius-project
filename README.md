@@ -1,4 +1,4 @@
-![logo](https://ibb.co/prML8bm)
+![logo](https://i.ibb.co/bRCKZQf/logoV3.png)
 
 <b>Trabalho de MC322 - Projeto de Diagnóstico de Doenças</b>
 
