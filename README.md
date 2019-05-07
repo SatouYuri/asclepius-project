@@ -20,6 +20,6 @@ Dada uma lista com todos os casos do acervo de dados do trabalho, para cada perg
 
 A ideia 2 consiste em transferir os dados do arquivo .CSV para um arquivo .ARFFF, para que o código, com o auxílio da biblioteca <b>Weka</b>, faça as análises de padrões com base no acervo de dados, e retorne, para uma lista e na ordem em que aparecem no arquivo .CSV, as probabilidades de cada doença possível no caso do paciente em questão. Dessa lista, o(s) diagnóstico(s) da(s) doença(s) mais provável(veis) deve(m) ser retornado(s). <i>(Retornar um número N de diagnósticos de doenças com X% ou mais de probabilidade, com <b>N</b> e <b>X</b> a serem decididos depois)</i>
 
-<b>Ideia 3: Sistema de diagnóstico usando aproximação por árvore</b>
+<b>Ideia 3: Sistema de diagnóstico usando aproximação por árvore (Ideia escolhida)</b>
 
 A ideia 3 consiste em gerar uma árvore construída a partir dos dados fornecidos no arquivo .CSV, com cada andar da árvore funcionando como uma pergunta, formando um caminho de <i>trues</i> e <i>falses</i> até um vetor de diagnósticos possíveis para o caso em questão. O médico seguirá esse caminho de acordo com o caso do paciente que estiver diagnosticando, assim alcançando o vetor de diagnósticos possíveis e retornando-os como resultados.
