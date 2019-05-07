@@ -1,4 +1,4 @@
-![logo](https://i.ibb.co/zHDTHJN/shop-logo.png)
+![logo](https://i.ibb.co/sCMD242/shop-logo-V2.png)
 
 <b>Loja de Componentes: em breve!</b>
 
