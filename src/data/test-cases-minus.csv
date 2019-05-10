@@ -1,4 +1,8 @@
 sin1,sin2,sin3,sin4,diagnostic
-f,t,f,f,bacterial_infection
-t,f,f,f,gordex
-f,f,t,f,bite_deficit
+t,f,t,t,gripe_gordoxiana
+t,t,f,f,gripe_gordoxiana
+f,t,f,f,virus_gordoxiano
+t,t,t,t,chaos_gordoxiano
+t,f,f,t,chaos_gordoxiano
+f,f,t,t,gripe_gordoxiana
+f,f,f,t,chaos_gordoxiano

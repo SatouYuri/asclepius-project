@@ -17,7 +17,7 @@ public class Paciente implements IResponder{
     public Paciente(){
     /*Quando um Paciente for instanciado, ele obrigatória e aleatoriamente recebe um conjunto de dados diretamente da base .CSV*/
         IDataSet DS = new DataSetComponentPlus();
-        DS.setDataSource("src\\data\\test-cases.csv");
+        DS.setDataSource("src\\data\\test-cases-minus.csv");
         String attributes[] = DS.requestAttributes();
         String instances[][] = DS.requestInstances();
         randomData = new Random().nextInt(instances.length);

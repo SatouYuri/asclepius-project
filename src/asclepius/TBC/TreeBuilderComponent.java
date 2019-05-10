@@ -2,6 +2,7 @@ package asclepius.TBC;
 
 import asclepius.DSC.DataSetComponentPlus;
 import asclepius.DSC.IDataSet;
+import java.util.ArrayList;
 
 public class TreeBuilderComponent implements ITree{
     private TreeNode insTree = null;
@@ -76,6 +77,35 @@ public class TreeBuilderComponent implements ITree{
         }else{
             System.out.println("WARNING: empty/null tree.");
             return insTree;
+        }
+    }
+    
+    @Override
+    public ArrayList diagCheck(){
+        ArrayList<ArrayList<String>> diag = new ArrayList<>();
+        //diag é um array com os arrays do último andar da árvore, em InOrder (esquerda p/ direita)
+        
+        diagArrayBuild(getTreeHead(), diag);
+        
+        for(int x = 0; x < diag.size(); x++){
+            System.out.println(diag.get(x));
+        }
+        
+        return diag;
+    }
+    
+    private void diagArrayBuild(TreeNode treeHead, ArrayList<ArrayList<String>> diag){
+    //Constrói o array retornado por diagCheck()
+        if(treeHead != null){
+            if(treeHead.getL() != null && treeHead.getR() != null){
+                diagArrayBuild(treeHead.getL(), diag);
+                diagArrayBuild(treeHead.getR(), diag);
+            }else if(treeHead.getL() == null && treeHead.getR() == null){
+                diag.add(treeHead.getListL());
+                diag.add(treeHead.getListR());
+            }else{
+                System.out.println("ERROR: method diagArrayBuild() has crashed - bad tree."); //Colocar exceção aqui depois?
+            }
         }
     }
 }
