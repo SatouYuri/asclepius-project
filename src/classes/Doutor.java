@@ -20,7 +20,7 @@ public class Doutor implements IResponderReceptacle, IEnquirer{
         curPacient = responder;
     }
 
-    @Override  
+    @Override
     public void startInterview() {
     	//Verifica ser foi efetuada a conexão
         if(curPacient != null){

@@ -56,19 +56,19 @@ public class TreeBuilderComponent implements ITree{
         return headNode;
     }
     
-    public void TreePrint(TreeNode treeHead){
+    public void treePrint(TreeNode treeHead){
         if(treeHead != null){
             System.out.printf("%s ", treeHead.getStrValue());
-            TreePrint(treeHead.getL());
-            TreePrint(treeHead.getR());
+            treePrint(treeHead.getL());
+            treePrint(treeHead.getR());
         }else{
             System.out.printf(". "); //Árvore vazia ou fim da recursão.
         }
     }
     
     @Override
-    public void TreePrint(){ //Imprime a árvore. Funcionalidade para testes.
-        TreePrint(insTree);
+    public void treePrint(){ //Imprime a árvore. Funcionalidade para testes.
+        treePrint(insTree);
     }
     
     @Override
