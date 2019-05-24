@@ -49,7 +49,7 @@ public class asclepius_start extends javax.swing.JFrame {
             }
         });
 
-        label_start.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Desktop\\asclepius\\sources\\btn_start.png")); // NOI18N
+        label_start.setIcon(new javax.swing.ImageIcon("C:/Users/maril/Documents/asclepius-project/sources/btn_start.png")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

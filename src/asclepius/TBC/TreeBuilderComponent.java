@@ -1,6 +1,5 @@
 package asclepius.TBC;
 
-import asclepius.DSC.DataSetComponentPlus;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -144,9 +143,9 @@ public class TreeBuilderComponent implements ITree{
             try {
                 readDS(dataSource);
             } catch (FileNotFoundException ex) {
-                Logger.getLogger(DataSetComponentPlus.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(TreeBuilderComponent.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
-                Logger.getLogger(DataSetComponentPlus.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(TreeBuilderComponent.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
