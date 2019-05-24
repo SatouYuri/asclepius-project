@@ -38,7 +38,7 @@ public class Paciente implements IResponder{
     public String ask(String question) {
         /*Chamando um DS para adquirir o vetor de sintomas*/
         IDataSet DS = new DataSetComponentPlus();
-        DS.setDataSource("src\\data\\test-cases.csv");
+        DS.setDataSource("src\\data\\test-cases-minus.csv");
         String attributes[] = DS.requestAttributes();
         
         /*Checando se o sintoma existe e gerando a posição counter do vetor que possui tal sintoma, se existit.*/

@@ -1,8 +1,13 @@
 package asclepius.TBC;
 
 import asclepius.DSC.DataSetComponentPlus;
-import asclepius.DSC.IDataSet;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TreeBuilderComponent implements ITree{
     private TreeNode insTree = null;
@@ -10,10 +15,7 @@ public class TreeBuilderComponent implements ITree{
     private String[][] instances = null;
     
     public TreeBuilderComponent(String dataSource){ //"dataSource" é o caminho para o arquivo CSV que gerará a árvore.
-        IDataSet DS = new DataSetComponentPlus();
-        DS.setDataSource(dataSource);
-        this.attributes = DS.requestAttributes();
-        this.instances = DS.requestInstances();
+        setDataSource(dataSource);
         this.insTree = buildTree();
     }
     
@@ -80,6 +82,13 @@ public class TreeBuilderComponent implements ITree{
         }
     }
     
+    public String[] requestAttributes(){
+        return this.attributes;
+    }
+    public String[][] requestInstances(){
+        return this.instances;
+    }
+    
     @Override
     public ArrayList diagCheck(){
         ArrayList<ArrayList<String>> diag = new ArrayList<>();
@@ -87,9 +96,9 @@ public class TreeBuilderComponent implements ITree{
         
         diagArrayBuild(getTreeHead(), diag);
         
-        for(int x = 0; x < diag.size(); x++){
+        /*for(int x = 0; x < diag.size(); x++){
             System.out.println(diag.get(x));
-        }
+        }*/
         
         return diag;
     }
@@ -105,6 +114,39 @@ public class TreeBuilderComponent implements ITree{
                 diag.add(treeHead.getListR());
             }else{
                 System.out.println("ERROR: method diagArrayBuild() has crashed - bad tree."); //Colocar exceção aqui depois?
+            }
+        }
+    }
+    
+    private void readDS(String dataSource) throws FileNotFoundException, IOException{
+        ArrayList<String[]> instArray = new ArrayList<>();
+        try (BufferedReader file = new BufferedReader(new FileReader(dataSource))) {
+            String line = file.readLine();
+            
+            if(line != null){
+                this.attributes = line.split(",");
+                line = file.readLine();
+                while(line != null){
+                    String[] instLine = line.split(",");
+                    instArray.add(instLine);
+                    line = file.readLine();
+                }
+                this.instances = instArray.toArray(new String[0][]);
+            }
+        }
+    }
+    
+    public void setDataSource(String dataSource){
+        if (dataSource == null) {
+            this.attributes = null;
+            this.instances = null;
+        }else{
+            try {
+                readDS(dataSource);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(DataSetComponentPlus.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(DataSetComponentPlus.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

@@ -18,8 +18,8 @@ public class TestChamber{
         */
         
         IResponder P1 = new Paciente();
-        IResponder P2 = new Paciente();
-        IResponder P3 = new Paciente();
+        /*IResponder P2 = new Paciente();
+        IResponder P3 = new Paciente();*/
         
         Doutor D1 = new Doutor(P1);
         D1.startInterview();
