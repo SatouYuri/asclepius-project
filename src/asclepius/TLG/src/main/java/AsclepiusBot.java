@@ -11,8 +11,21 @@ public class AsclepiusBot extends TelegramLongPollingBot {
 
     public void onUpdateReceived(Update update) {
 
-
-        /*
+        String text = update.getMessage().getText();
+        if(text.equals("/start")){
+            String nome = update.getMessage().getFrom().getFirstName();
+            SendMessage message = new SendMessage();
+            message.setText("Olá "+nome+"! Vamos iniciar a consulta?\n");
+            message.setChatId(update.getMessage().getChatId());
+            try {
+                execute(message);
+                //System.out.println(text);
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println(update.getMessage().getText());
+/*
         String text = update.getMessage().getText();
         //System.out.println(text);
 
@@ -28,7 +41,8 @@ public class AsclepiusBot extends TelegramLongPollingBot {
         }
 
         System.out.println(text);
-         */
+
+ */
 
     }
 
@@ -37,7 +51,7 @@ public class AsclepiusBot extends TelegramLongPollingBot {
     }
 
     public String getBotToken() {
-        File file = new File("src/.token.txt");
+        File file = new File("src/main/resources/.token.txt");
         Scanner sc = null;
         try {
             sc = new Scanner(file);

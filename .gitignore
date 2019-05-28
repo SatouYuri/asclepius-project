@@ -25,4 +25,4 @@ hs_err_pid*
 /bin/
 
 #token
-src/asclepius/TLG/src/.token.txt
+src/asclepius/TLG/resources/.token.txt
