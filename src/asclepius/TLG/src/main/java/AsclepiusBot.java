@@ -11,7 +11,10 @@ public class AsclepiusBot extends TelegramLongPollingBot {
 
     public void onUpdateReceived(Update update) {
 
+
+        /*
         String text = update.getMessage().getText();
+        //System.out.println(text);
 
         String nome = update.getMessage().getFrom().getFirstName();
         SendMessage message = new SendMessage();
@@ -25,6 +28,7 @@ public class AsclepiusBot extends TelegramLongPollingBot {
         }
 
         System.out.println(text);
+         */
 
     }
 
@@ -41,12 +45,10 @@ public class AsclepiusBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
 
-        // we just need to use \\Z as delimiter
+        // we just need to use \n as delimiter
         sc.useDelimiter("\n");
 
         String token = sc.next();
-        //System.out.println(a+"fran");
-        // System.out.println("oioi");
 
         return token;
     }
