@@ -26,3 +26,4 @@ hs_err_pid*
 
 #token
 src/asclepius/TLG/resources/.token.txt
+src/asclepius/TLG/src/main/resources/.token.txt
