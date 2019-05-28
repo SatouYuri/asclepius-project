@@ -3,6 +3,10 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class AsclepiusBot extends TelegramLongPollingBot {
 
     public void onUpdateReceived(Update update) {
@@ -29,6 +33,21 @@ public class AsclepiusBot extends TelegramLongPollingBot {
     }
 
     public String getBotToken() {
-        return "token";
+        File file = new File("src/.token.txt");
+        Scanner sc = null;
+        try {
+            sc = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        // we just need to use \\Z as delimiter
+        sc.useDelimiter("\n");
+
+        String token = sc.next();
+        //System.out.println(a+"fran");
+        // System.out.println("oioi");
+
+        return token;
     }
 }
