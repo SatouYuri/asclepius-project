@@ -45,28 +45,16 @@ public class AsclepiusBot extends TelegramLongPollingBot {
             // Add the second row to the keyboard
             keyboard.add(row);
             // Set the keyboard to the markup
-            keyboardMarkup.set
+            keyboardMarkup.setKeyboard(keyboard);
+            // Add it to the message
+            message.setReplyMarkup(keyboardMarkup);
         try {
             execute(message);
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
-        return;
+
     }
-
-
-    public String getBotUsername() {
-        return "asclepius_bot";
-    }Keyboard(keyboard);
-            // Add it to the message
-            message.setReplyMarkup(keyboardMarkup);
-            try {
-                execute(message); // Sending our message object to user
-            } catch (TelegramApiException e) {
-                e.printStackTrace();
-            }
-
-        }
 
         System.out.println(text);
     }
